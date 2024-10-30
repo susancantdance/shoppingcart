@@ -1,0 +1,14 @@
+.nav {
+  background-color: green;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.btnleft {
+  width: 150px;
+}
+
+.btnright {
+  width: 150px;
+  margin-left: auto;
+}
