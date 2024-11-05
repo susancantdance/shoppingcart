@@ -1,4 +1,5 @@
-import { TemporaryDrawer } from "./temporarydrawer.jsx";
+// import { TemporaryDrawer } from "./temporarydrawer.jsx";
+import Drawer from "@mui/material/Drawer";
 import PropTypes from "prop-types";
 import { Card } from "./card.jsx";
 
@@ -16,13 +17,27 @@ function Cart({ productList, setProductList, cartOpen, setCartOpen }) {
     );
   });
 
+  const toggleDrawer = (co) => (event) => {
+    if (
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
+      console.log("in the IF");
+      return;
+    }
+    console.log("setting cart open...");
+    setCartOpen(co);
+  };
+
   return (
     <div>
-      <TemporaryDrawer
-        cartItems={cartItems}
-        cartOpen={cartOpen}
-        setCartOpen={setCartOpen}
-      />
+      {/* <Button onClick={toggleDrawer(true)}>Open Drawer</Button> */}
+      <Drawer anchor="right" open={cartOpen} onClose={toggleDrawer(false)}>
+        <div>
+          HELLO! THIS BE UR CART!
+          <ul>{cartItems}</ul>
+        </div>
+      </Drawer>
     </div>
   );
 }

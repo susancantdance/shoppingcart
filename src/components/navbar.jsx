@@ -1,7 +1,8 @@
 /* eslint-disable react/prop-types */
 import styles from "./navbar.module.css";
 
-function NavBar({ updateContent }) {
+function NavBar({ updateContent, setCartOpen }) {
+  console.log("hi i'm nav bar");
   return (
     <div className={styles.nav}>
       <button className={styles.btnleft} onClick={() => updateContent("home")}>
@@ -10,7 +11,7 @@ function NavBar({ updateContent }) {
       <button className={styles.btnleft} onClick={() => updateContent("shop")}>
         Shop
       </button>
-      <button className={styles.btnright} onClick={() => updateContent("cart")}>
+      <button className={styles.btnright} onClick={() => setCartOpen(true)}>
         {" "}
         Cart
       </button>

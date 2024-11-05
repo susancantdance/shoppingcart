@@ -1,6 +1,7 @@
 import styles from "./cards.module.css";
 // import { products } from "./products.jsx";
 import { Card } from "./card.jsx";
+// import { Cart } from "./cart.jsx";
 import PropTypes from "prop-types";
 
 function Cards({ productList, setProductList }) {
@@ -15,10 +16,15 @@ function Cards({ productList, setProductList }) {
     );
   });
 
+  //   const returnCart = () => {
+  //     return <Cart productList={productList} setProductList={setProductList} />;
+  //   };
+
   //   console.log(productTile);
   return (
     <div className={styles.cardcontainer}>
-      This here be the cards container
+      <p>This here be the cards container</p>
+      {/* <button onClick={returnCart}>Cart</button> */}
       <ul>{productTile}</ul>
     </div>
   );
