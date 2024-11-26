@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 
 function Buttons({ item, productList, setProductList }) {
-  const [qty, setQty] = useState(0);
+  const [qty, setQty] = useState(item.qty);
 
   const updateQty = (addOrSub) => {
     if (addOrSub == "+") {

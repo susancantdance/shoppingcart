@@ -10,6 +10,7 @@ function Card({ item, productList, setProductList }) {
     <>
       <li className={styles.item} key={item.name}>
         {item.name}
+        <p className={styles.price}>Price: ${item.price}.00</p>
         <Buttons
           item={item}
           key={item.name}

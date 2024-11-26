@@ -5,8 +5,8 @@ import { Card } from "./card.jsx";
 
 function Cart({ productList, setProductList, cartOpen, setCartOpen }) {
   console.log(`im re-rendering cart and its ${cartOpen}`);
-  let cartItems = productList.filter((prod) => prod.qty > 0);
-  cartItems = cartItems.map((product) => {
+  let cartItemsRaw = productList.filter((prod) => prod.qty > 0);
+  let cartItems = cartItemsRaw.map((product) => {
     return (
       <Card
         item={product}
@@ -15,6 +15,12 @@ function Cart({ productList, setProductList, cartOpen, setCartOpen }) {
         setProductList={setProductList}
       />
     );
+  });
+
+  let totalCost = 0;
+  cartItemsRaw.forEach((item) => {
+    totalCost += item.price * item.qty;
+    console.log(`total is ${totalCost}`);
   });
 
   const toggleDrawer = (co) => (event) => {
@@ -36,6 +42,7 @@ function Cart({ productList, setProductList, cartOpen, setCartOpen }) {
         <div>
           HELLO! THIS BE UR CART!
           <ul>{cartItems}</ul>
+          <p>Total amount: ${totalCost}.00</p>
         </div>
       </Drawer>
     </div>

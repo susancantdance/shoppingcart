@@ -9,7 +9,7 @@ function App() {
   const [cartOpen, setCartOpen] = useState(false);
   const [productList, setProductList] = useState(
     products.map((prod) => {
-      return { name: prod.name, qty: prod.qty };
+      return { name: prod.name, price: prod.price, qty: prod.qty };
     })
   );
 
